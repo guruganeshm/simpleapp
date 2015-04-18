@@ -24,7 +24,11 @@ Template.texts.events({
 	},
 
 	'click #delete' : function  () {
+		if ( Meteor.user().username == this.author ){
 		Texts.remove(this._id);
+	} else {
+		alert('You cannot delete other users post');
 	}
+}
 });
 
