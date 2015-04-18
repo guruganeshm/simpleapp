@@ -14,5 +14,5 @@ mrt:bootstrap-alerts
 sacha:spin
 insecure
 fortawesome:fontawesome
-momentjs:moment
-aldeed:autoform
+copleykj:livestamp
+brentjanderson:buzz

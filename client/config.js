@@ -37,3 +37,15 @@ areValidPasswords = function(password, confirm) {
     }
     return true;
 };
+
+var notify = new buzz.sound('/sound/ting.ogg');
+
+
+// Template.registerHelper("fromNow", function(date) {
+
+//     if(date){
+//         return moment(date).fromNow();
+//     }
+    
+
+// }); 
