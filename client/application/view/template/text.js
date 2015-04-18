@@ -1,17 +1,3 @@
-var notify = new buzz.sound('/sound/ting.ogg');
-
-if(Meteor.isClient){
-	Texts.find().observeChanges({
-		added: function () {
-			notify.play();
-		},
-		removed: function () {
-			notify.play();
-		}
-	});
-}
-
-
 
 
 Template.texts.helpers({
