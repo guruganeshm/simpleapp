@@ -1,5 +1,19 @@
 var notify = new buzz.sound('/sound/ting.ogg');
 
+if(Meteor.isClient){
+	Texts.find().observeChanges({
+		added: function () {
+			notify.play();
+		},
+		removed: function () {
+			notify.play();
+		}
+	});
+}
+
+
+
+
 Template.texts.helpers({
  texts: function(){
 	return Texts.find({},{sort: {time: -1}, reactive:true});
@@ -19,7 +33,7 @@ Template.texts.events({
 
 		var txtMsg =  { title: title, desc: desc, author: authorName, time: time };
 		 Meteor.call('newText', txtMsg);
-		 notify.play();
+		 // notify.play();
          $('#saveText')[0].reset();
 		}
 
@@ -32,7 +46,7 @@ Template.texts.events({
 		if ( Meteor.user().username == this.author ){
 		var delMsg = this._id
 		Meteor.call('deleteText', delMsg);
-		notify.play();
+		// notify.play();
 	} else {
 		alert('You cannot delete other users post');
 	}
