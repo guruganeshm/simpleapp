@@ -1,0 +1,30 @@
+<template name="texts">
+<div class="row main">
+	<form id="saveText" method="POST" class="form-inline" role="form">
+	
+		<div class="form-group">
+			<label class="sr-only" for="">Title</label>
+			<input type="text" class="form-control" id="inputTitle" placeholder="Title">
+		</div>
+		<div class="form-group">
+			<label class="sr-only" for="">Description</label>
+			<input type="text" class="form-control" id="inputDesc" placeholder="Description">
+		</div>
+	
+		<button type="submit" class="btn btn-primary">Save</button>
+	</form>
+</div>
+
+<section class="mainSec">
+<div class="row main">
+{{#each texts}}
+<div class="mainBlock">
+	<h3>{{title}}</h3>
+	<p>{{desc}}</p>
+	<p class= "author">Posted by: {{author}}</p>
+	<i class="fa fa-trash-o fa-3x right " id="delete"></i>
+</div>
+{{/each}}		
+</div>
+</section>
+</template>

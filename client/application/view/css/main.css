@@ -1122,3 +1122,41 @@ ul.faq li > div h3 {
   border-color: #fbeed5;
   font-weight: 500;
 }
+
+.mainBlock {
+    background-color: #fff;
+    margin: 10px;
+    padding: 15px;
+    box-shadow: 0px 0px 3px 1px #ccc;
+}
+
+.mainBlock h3,
+.mainBlock p {
+    margin: 0px;
+}
+
+section.mainSec {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.row.main {
+    margin: 0px;
+    text-align: center;
+}
+
+i.fa.fa-trash-o.fa-3x.right {
+    float: right;
+    position: relative;
+    bottom: 15px;
+    color: #666;
+    cursor: pointer;
+    font-size:20px;
+}
+i.fa.fa-trash-o.fa-3x.right:hover {
+    color: #F27B7B;
+}
+p.author {
+    font-weight: bold;
+    color: #5CB89C;
+}

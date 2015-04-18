@@ -15,14 +15,14 @@ if(Meteor.isClient){
 
       Accounts.createUser({username:username, email: email, password: password}, function(err) {
         if (err) {
-          if (err.message === 'username already exists.') {
+          if (err.message === 'Username already exists.') {
             Alerts.add('We are sorry but this username is already used.', 'warning', {autoHide: 2000});
           } else {
             Alerts.add('Please try different Username', 'warning', {autoHide: 2000});
           }
         } else {
-          console.log('Congrats new User, you\'re in!');
-          Router.go('/login');
+          console.log('Congrats new User, you\'re in!'); 
+          Router.go('/texts');
         }
       });
 
@@ -45,7 +45,7 @@ Template.login.events({
           Alerts.add('Invalid Credentials!', 'warning', {autoHide: 2000});
         } else {
           console.log('Welcome back User!');
-          Router.go('/welcome');
+          Router.go('/texts');
         }
       });
 
