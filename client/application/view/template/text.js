@@ -4,7 +4,6 @@ Template.texts.helpers({
  texts: function(){
 	return Texts.find({},{sort: {time: -1}, reactive:true});
 },
-
 });
 
 Template.texts.events({
@@ -18,17 +17,21 @@ Template.texts.events({
 		
 		if ( isNotEmpty(title) && isNotEmpty(desc)) {
 
-		Texts.insert({ title: title, desc: desc, author: authorName, time: time });
-		notify.play();
+		var txtMsg =  { title: title, desc: desc, author: authorName, time: time };
+		 Meteor.call('newText', txtMsg);
+		 notify.play();
          $('#saveText')[0].reset();
-		} else { 
+		}
+
+		 else { 
 				console.log("Saving Text Failed...");
 		}
 	},
 
 	'click #delete' : function  () {
 		if ( Meteor.user().username == this.author ){
-		Texts.remove(this._id);
+		var delMsg = this._id
+		Meteor.call('deleteText', delMsg);
 		notify.play();
 	} else {
 		alert('You cannot delete other users post');
