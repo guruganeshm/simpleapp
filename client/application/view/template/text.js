@@ -36,6 +36,25 @@ Template.texts.events({
 	} else {
 		alert('You cannot delete other users post');
 	}
-}
+	},
+
+	'click #Edit' : function(e, t) {
+		e.preventDefault();
+
+		var editText = $(e.currentTarget),
+		title = editText.find('#editInputTitle').val(),
+		desc = editText.find('#editInputDesc').val(),
+		updatedAt = new Date()
+
+		if ( isNotEmpty(title) && isNotEmpty(desc)) {
+
+			var editTxtMsg = { title: title, desc: desc, LastUpdateAt: updatedAt};
+
+			Meteor.call('EditText', EditTxtMsg);
+
+			
+		}  
+
+	}
 });
 
