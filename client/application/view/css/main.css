@@ -1117,10 +1117,11 @@ ul.faq li > div h3 {
   color: inherit;
 }
 .alert-warning {
-  color: #FFFFFF;
-  background-color: #A39D9D;
-  border-color: #fbeed5;
-  font-weight: 500;
+  color: #FD0505;
+  background-color: #FFFFFF;
+  position: absolute;
+  text-align: center;
+  width: 100%;
 }
 
 .mainBlock {
@@ -1133,35 +1134,39 @@ ul.faq li > div h3 {
 .mainBlock h3,
 .mainBlock p {
     margin: 0px;
+    word-wrap: break-word;
 }
 
 section.mainSec {
     margin: 0 auto;
     width: 100%;
 }
-
 .row.main {
-    margin: 0px;
-    text-align: center;
+  text-align: center;
+  margin:0;
 }
 
-i.fa.fa-trash-o.fa-3x.right {
-    float: right;
-    position: relative;
-    bottom: 15px;
-    color: #666;
-    cursor: pointer;
-    font-size:20px;
+i#edit, i#delete {
+  font-size: 13px;
+  padding: 0px 10px;
+  cursor: pointer;
 }
-i.fa.fa-trash-o.fa-3x.right:hover {
+
+i#delete:hover {
     color: #F27B7B;
 }
+i#edit:hover {
+    color: #0087F9;
+}
+
 p.author {
-    font-size: 12px;
+    font-size: 10px;
     color: #5CB89C;
     text-transform: capitalize;
     font-weight: bold;
+    display: inline;
 }
 p.time {
     font-size: 10px;
+    display: inline;
 }

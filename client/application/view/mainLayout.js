@@ -7,3 +7,10 @@ Template.mainLayout.events({
   		// Session.set("collapse" , "collapse");
 	}
 });	
+
+/*Template.mainLayout.helpers({
+	userOnline: function (){
+ 	var help = Meteor.users.find({ "status.online": true });
+ 	confirm(help.username);
+ }
+});*/

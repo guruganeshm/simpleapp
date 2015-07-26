@@ -15,17 +15,53 @@
 	</form>
 </div>
 
+
+
 <section class="mainSec">
 <div class="row main">
-{{#each texts}}
+{{#each texts }}
 <div class="mainBlock">
+
 	<h3>{{title}}</h3>
 	<p>{{desc}}</p>
-	<p class= "author">Posted by: {{author}}</p>
+	<p class= "author">{{author}}</p>
 	<p class= "time">{{livestamp time}}</p>
-	<i class="fa fa-trash-o fa-3x right " placeholder="Delete" id="delete"></i>
+	{{#if authorTools}}
+	<i class="fa fa-pencil fa-2x right" placeholder="Edit" data-toggle="modal" href='#editModal' id="edit"></i>
+	<i class="fa fa-trash-o fa-2x right" placeholder="Delete" id="delete"></i>
+    {{/if}}
 </div>
 {{/each}}		
 </div>
 </section>
+
+<div class="modal fade" id="editModal">
+	<div class="modal-dialog">
+		<div class="modal-content edit">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">Edit Post</h4>
+			</div>
+				{{ #each editText}}
+				<form id="editText" method="POST" class="form-inline" role="form">
+	<div class="modal-body">
+		<div class="form-group">
+			<label class="sr-only" for="">Title</label>
+			<textarea class="form-control" id="inputTitle" value = "{{title}}" required="required" rows="2"></textarea>
+		</div>
+		<div class="form-group">
+			<label class="sr-only" for="">Description</label>
+			<textarea class="form-control" id="inputDesc" value="{{desc}}" placeholder="Description" rows="4"></textarea>
+		</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="submit" class="btn btn-primary">Save changes</button>
+				
+			</div>
+			</form>
+			{{ /each }}
+		</div>
+	</div>
+</div>
 </template>

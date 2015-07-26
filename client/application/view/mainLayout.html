@@ -12,14 +12,20 @@
             </div>
             <div class="collapse navbar-collapse" role="navigation">
                 <ul class="nav navbar-nav navbar-right">
+
+                
                     {{#if currentUser}}
                         <li><a href="#" class="">Howdy <b>{{currentUser.username}}</b>!</a></li>
                         <li><a href="/" id="signOut" class="">Log Out</a></li>
+                       
                     {{else}}
                         <li class="{{isActiveRoute regex='home'}} "><a href="{{pathFor 'home'}}">Home</a></li>
                         <li class="{{isActiveRoute regex='login'}} "><a href="{{pathFor 'login'}}">Log In</a></li>
+                         
                         <li><a href="#" class="">About Us</a></li>
                         <li><a href="#" class="">Contact</a></li>
+                        
+                        
                     {{/if}}
                 </ul>
             </div>

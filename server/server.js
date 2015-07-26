@@ -11,5 +11,8 @@
   deleteText: function(delMsg){
   	Texts.remove(delMsg);
   	s.notify();
+  },
+  editText: function(editTxtMsg,currentPostId){
+  	Texts.update( currentPostId , {$set : editTxtMsg });
   }
 })

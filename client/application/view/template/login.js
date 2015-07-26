@@ -42,7 +42,7 @@ Template.login.events({
 
       Meteor.loginWithPassword(username, password, function(err) {
         if (err) {
-          Alerts.add('Invalid Credentials!', 'warning', {autoHide: 2000});
+          Alerts.add('Invalid Username or Password! please Try again...', 'warning', {autoHide: 2000});
         } else {
           console.log('Welcome back User!');
           Router.go('/texts');
